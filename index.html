@@ -80,6 +80,14 @@
     color:var(--cream) !important;
     opacity:1 !important;
     border-radius:2px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    border:1px solid var(--ember);
+    cursor:pointer;
+    -webkit-appearance:none;
+    appearance:none;
   }
   .nav-give:hover{background:var(--ember-dark);}
 
@@ -355,6 +363,13 @@
     text-decoration:none;
     color:var(--cream);
     transition:background .15s;
+    border:none;
+    text-align:left;
+    font-family:'Public Sans', sans-serif;
+    width:100%;
+    cursor:pointer;
+    -webkit-appearance:none;
+    appearance:none;
   }
   .org-card:hover{background:#1B3660; background:#1B3660;}
   .org-name{font-family:'Fraunces', serif; font-size:1.15rem; font-weight:500;}
@@ -505,7 +520,7 @@
     <a href="#need">The Need</a>
     <a href="#kitchens">Photographs</a>
     <a href="#how">How It Helps</a>
-    <a href="#help" class="nav-give">Give Now</a>
+    <button type="button" class="nav-give" onclick="openDonateModal()">Give Now</button>
   </nav>
 </header>
 
@@ -516,7 +531,7 @@
     <h1>The pots go up<br>before the food does.</h1>
     <p>At crowded curbs and collapsed buildings, families hold out pots and buckets for a single ladle of lentils — often the only meal of the day. The line rarely gets shorter.</p>
     <div class="hero-actions">
-      <a href="#help" class="btn">Help Feed a Family</a>
+      <button type="button" class="btn" onclick="openDonateModal()">Help Feed a Family</button>
       <button type="button" class="btn btn-ghost" onclick="openDonateModal()">Support This Programme</button>
       <a href="#need" class="btn btn-ghost">Read the Dispatch</a>
     </div>
@@ -619,37 +634,37 @@
 <section class="give" id="help">
   <div class="section-head">
     <span class="section-num mono">04</span>
-    <h2>Give through a trusted partner</h2>
+    <h2>Give directly to this programme</h2>
   </div>
-  <p class="give-note">This page doesn't process payments directly — your gift goes further through organizations already operating on the ground in Gaza, with the logistics and access to actually deliver it. Each link below opens the organization's own donation page.</p>
+  <p class="give-note">Choose where you'd like your gift to go. Every option below opens the same secure Flutterwave checkout.</p>
   <div class="org-grid">
-    <a class="org-card" href="https://www.wfp.org/emergencies/palestine-emergency" target="_blank" rel="noopener">
-      <div class="org-name">World Food Programme</div>
-      <div class="org-desc">Runs community kitchens, food parcels, and bakery support reaching over a million people a month in Gaza.</div>
-      <div class="org-cta">Donate to WFP →</div>
-    </a>
-    <a class="org-card" href="https://donate.unrwa.org/int/en/gaza" target="_blank" rel="noopener">
-      <div class="org-name">UNRWA</div>
-      <div class="org-desc">The UN agency for Palestine refugees — food and cash assistance, healthcare, and shelter across Gaza.</div>
-      <div class="org-cta">Donate to UNRWA →</div>
-    </a>
-    <a class="org-card" href="https://www.pcrf.net/" target="_blank" rel="noopener">
-      <div class="org-name">Palestine Children's Relief Fund</div>
-      <div class="org-desc">Medical care and hospital rebuilding focused specifically on children.</div>
-      <div class="org-cta">Donate to PCRF →</div>
-    </a>
-    <a class="org-card" href="https://www.unicef.org/emergencies" target="_blank" rel="noopener">
-      <div class="org-name">UNICEF</div>
-      <div class="org-desc">Clean water, malnutrition treatment, and cash assistance through hundreds of distribution points.</div>
-      <div class="org-cta">Donate to UNICEF →</div>
-    </a>
+    <button type="button" class="org-card" onclick="openDonateModal()">
+      <div class="org-name">Fund a Kitchen</div>
+      <div class="org-desc">Hot meals and food parcels through community kitchens and bakeries — often the only meal a displaced family gets that day.</div>
+      <div class="org-cta">Donate Now →</div>
+    </button>
+    <button type="button" class="org-card" onclick="openDonateModal()">
+      <div class="org-name">Fund Clean Water</div>
+      <div class="org-desc">Trucked water, repaired pipelines, and hygiene kits to cut disease in crowded shelters and tents.</div>
+      <div class="org-cta">Donate Now →</div>
+    </button>
+    <button type="button" class="org-card" onclick="openDonateModal()">
+      <div class="org-name">Fund Medical Care</div>
+      <div class="org-desc">Therapeutic food for malnourished children and support for hospitals and clinics still standing.</div>
+      <div class="org-cta">Donate Now →</div>
+    </button>
+    <button type="button" class="org-card" onclick="openDonateModal()">
+      <div class="org-name">Where Needed Most</div>
+      <div class="org-desc">Let the programme direct your gift to whichever need is most urgent right now.</div>
+      <div class="org-cta">Donate Now →</div>
+    </button>
   </div>
 </section>
 
 <footer>
   <div class="foot-top">
     <div class="foot-brand">Gaza Relief Dispatch</div>
-    <div style="max-width:44ch;">Built to point people toward organizations verified to be operating in Gaza. Not itself a registered charity or payment processor.</div>
+    <div style="max-width:44ch;">Donations made through this page go directly to this programme via Flutterwave, not to a registered nonprofit. Confirm the operator's identity before giving if you received this link from someone else.</div>
   </div>
   <div>Photographs show displacement and communal food distribution in Gaza, 2024–2025, sourced from wire and press photography. Statistics: IPC Integrated Food Security Phase Classification (Dec 2025 snapshot, projection through April 2026); World Food Programme situation updates, 2026.</div>
 </footer>
